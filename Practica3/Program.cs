@@ -81,7 +81,9 @@ namespace Practica3
         {
             string dpi;
             Console.Clear();
+            Console.ForegroundColor = ConsoleColor.White;
             Console.Write("Ingrese DPI a buscar: ");
+            Console.ForegroundColor = ConsoleColor.Cyan;
             dpi = Console.ReadLine();
 
             Persona busqueda = new Persona("", dpi, "", "");
@@ -113,11 +115,13 @@ namespace Practica3
                     int opcion;
                     Console.ForegroundColor = ConsoleColor.White;
                     Console.WriteLine("");
-                    Console.WriteLine(" -------------  Menú de Vistas  ------------ ");
+                    Console.WriteLine(" ------------  Menú de Opciones  ----------- ");
                     Console.WriteLine("|            1.Comprimir cartas             |");
                     Console.WriteLine("|           2.Descomprimir cartas           |");
                     Console.WriteLine("|         3.Ver cartas comprimidas          |");
                     Console.WriteLine("|       4.Ver cartas descomprimidas         |");
+                    Console.WriteLine("|            5.Seguir buscando              |");
+                    Console.WriteLine("|                 6.Salir                   |");
                     Console.WriteLine(" ------------------------------------------- ");
 
                     Console.ForegroundColor = ConsoleColor.White;
@@ -229,6 +233,14 @@ namespace Practica3
                         Process.Start("explorer.exe", ruta);
                         Console.Clear();
                         goto Menu;
+                    }
+                    else if (opcion == 5)
+                    {
+                        Buscar();
+                    }
+                    else if (opcion == 6)
+                    {
+                        Environment.Exit(0);
                     }
                     else
                     {
